@@ -28,6 +28,14 @@
     .btn { display: inline-block; background: #f1c40f; color: #111; padding: 12px 30px; border-radius: 30px; font-weight: 600; transition: 0.3s; text-decoration: none; cursor: pointer; }
     .btn:hover { background: #d4ac0d; color: #fff; }
 
+    /* Cards on Home */
+    .cards { width: 90%; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+    .card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #111; }
+    .card p { font-size: 1rem; margin-bottom: 20px; color: #444; }
+    .btn.small { padding: 8px 18px; font-size: 0.9rem; }
+
     /* Pages */
     .page { display: none; padding: 50px 20px; max-width: 900px; margin: auto; }
     .page.active { display: block; }
@@ -61,27 +69,46 @@
         <a class="btn" onclick="showPage('about')">Discover More</a>
       </div>
     </div>
+
+    <!-- Info Cards -->
+    <main class="cards">
+      <div class="card">
+        <h3>About Us</h3>
+        <p>Discover our premium Roblox shopping mall and vision for the future of virtual commerce.</p>
+        <a class="btn small" onclick="showPage('about')">Read More</a>
+      </div>
+      <div class="card">
+        <h3>Join Us</h3>
+        <p>Become part of our Roblox and Discord community for exclusive stores, updates, and events.</p>
+        <a class="btn small" onclick="showPage('join')">Join Today</a>
+      </div>
+      <div class="card">
+        <h3>Contact</h3>
+        <p>Want to collaborate or need support? Reach out to us anytime via Roblox or Discord.</p>
+        <a class="btn small" onclick="showPage('contact')">Get in Touch</a>
+      </div>
+    </main>
   </section>
 
   <!-- About -->
   <section id="about" class="page">
     <h2>About Us</h2>
     <p>Discover our premium Roblox shopping mall and vision for the future of virtual commerce.</p>
-    <a class="btn" onclick="showPage('join')">Join Us</a>
+    <a class="btn" onclick="showPage('home')">Back Home</a>
   </section>
 
   <!-- Join -->
   <section id="join" class="page">
     <h2>Join Our Community</h2>
     <p>Become part of our Roblox and Discord community for exclusive stores, updates, and events.</p>
-    <a class="btn" onclick="showPage('contact')">Contact Us</a>
+    <a class="btn" onclick="showPage('home')">Back Home</a>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="page">
     <h2>Contact Us</h2>
     <p>Want to collaborate or need support? Reach out to us anytime via Roblox or Discord.</p>
-    <a class="btn" onclick="showPage('home')">Back to Home</a>
+    <a class="btn" onclick="showPage('home')">Back Home</a>
   </section>
 
   <!-- Footer -->
@@ -93,8 +120,9 @@
     function showPage(pageId) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById(pageId).classList.add('active');
-      window.scrollTo(0, 0); // always go to top when switching
+      window.scrollTo(0, 0); // always go to top
     }
   </script>
 </body>
 </html>
+
