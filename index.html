@@ -5,90 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bramwell Shopping</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
-
-    /* Header / Navbar */
-    header { background: #111; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
-    .nav-container { width: 90%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
-    .logo { color: #fff; font-weight: 700; font-size: 1.5rem; }
-    nav ul { list-style: none; display: flex; }
-    nav ul li { margin-left: 20px; }
-    nav ul li a { color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-    nav ul li a:hover { color: #f1c40f; }
-
-    /* Sections */
-    section { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 60px 20px; }
-    section:nth-child(even) { background: #fff; }
-    section:nth-child(odd) { background: #f4f4f4; }
-
-    h1, h2 { margin-bottom: 20px; }
-    p { max-width: 700px; text-align: center; margin-bottom: 20px; }
-
-    /* Hero */
-    .hero { background: url("file:///C:/Users/iimas/Desktop/f28a40622507328fb3cc9db88479e3d5.png") no-repeat center/cover; color: #fff; text-align: center; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    .hero p { font-size: 1.2rem; margin-bottom: 20px; }
-
-    /* Buttons */
-    .btn { background: #f1c40f; color: #111; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: 0.3s; }
-    .btn:hover { background: #d4ac0d; color: #fff; }
-
-    /* Footer */
-    footer { background: #111; color: #fff; text-align: center; padding: 15px; }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <!-- Navbar -->
   <header>
     <div class="nav-container">
-      <div class="logo">Bramwell Shopping</div>
+      <h1 class="logo">Bramwell <span>Shopping</span></h1>
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#join">Join</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Home -->
-  <section id="home" class="hero">
-    <h1>Welcome to Bramwell Shopping</h1>
-    <p>Your premier Roblox shopping experience.</p>
-    <a href="https://www.roblox.com/groups/your-group-id" target="_blank" class="btn">Join Our Roblox Group</a>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to Bramwell Shopping</h2>
+      <p>Luxury Roblox shopping experiences like never before.</p>
+      <a href="about.html" class="btn">Discover More</a>
+    </div>
   </section>
 
-  <!-- About -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Bramwell Shopping is your one-stop destination for unique in-game shopping experiences. 
-       We bring the feel of real-world malls into Roblox with exclusive stores, seasonal events, and community fun.</p>
-  </section>
-
-  <!-- Join -->
-  <section id="join">
-    <h2>Join the Community</h2>
-    <p>Become part of the Bramwell Shopping family. Join our Roblox group and Discord to stay updated on events and new releases!</p>
-    <a href="https://www.roblox.com/groups/your-group-id" target="_blank" class="btn">Roblox Group</a>
-    <a href="https://discord.gg/your-discord-invite" target="_blank" class="btn">Discord Server</a>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Have questions or feedback? Reach out to us through our Roblox group or Discord server.</p>
-  </section>
+  <!-- Info Cards -->
+  <main class="cards">
+    <div class="card">
+      <h3>About Us</h3>
+      <p>Discover our premium Roblox shopping mall and vision for the future of virtual commerce.</p>
+      <a href="about.html" class="btn small">Read More</a>
+    </div>
+    <div class="card">
+      <h3>Join Us</h3>
+      <p>Become part of our Roblox and Discord community for exclusive stores, updates, and events.</p>
+      <a href="join.html" class="btn small">Join Today</a>
+    </div>
+    <div class="card">
+      <h3>Contact</h3>
+      <p>Want to collaborate or need support? Reach out to us anytime via Roblox or Discord.</p>
+      <a href="contact.html" class="btn small">Get in Touch</a>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Bramwell Shopping. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
