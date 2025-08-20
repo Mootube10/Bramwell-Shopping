@@ -8,7 +8,7 @@
   <style>
     /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; scroll-behavior: smooth; }
 
     /* Navbar */
     header { background: #111; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
@@ -48,40 +48,40 @@
       <h1 class="logo">Bramwell <span>Shopping</span></h1>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Join</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#join">Join</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-content">
       <h2>Welcome to Bramwell Shopping</h2>
       <p>Luxury Roblox shopping experiences like never before.</p>
-      <a href="#" class="btn">Discover More</a>
+      <a href="#about" class="btn">Discover More</a>
     </div>
   </section>
 
   <!-- Info Cards -->
   <main class="cards">
-    <div class="card">
+    <div class="card" id="about">
       <h3>About Us</h3>
       <p>Discover our premium Roblox shopping mall and vision for the future of virtual commerce.</p>
-      <a href="#" class="btn small">Read More</a>
+      <a href="#about" class="btn small">Read More</a>
     </div>
-    <div class="card">
+    <div class="card" id="join">
       <h3>Join Us</h3>
       <p>Become part of our Roblox and Discord community for exclusive stores, updates, and events.</p>
-      <a href="#" class="btn small">Join Today</a>
+      <a href="#join" class="btn small">Join Today</a>
     </div>
-    <div class="card">
+    <div class="card" id="contact">
       <h3>Contact</h3>
       <p>Want to collaborate or need support? Reach out to us anytime via Roblox or Discord.</p>
-      <a href="#" class="btn small">Get in Touch</a>
+      <a href="#contact" class="btn small">Get in Touch</a>
     </div>
   </main>
 
