@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bramwell Shopping</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
+
+    /* Navbar */
+    header { background: #111; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+    .nav-container { width: 90%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { color: #fff; font-size: 1.6rem; font-weight: 700; }
+    .logo span { color: #f1c40f; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin-left: 25px; }
+    nav ul li a { color: #fff; font-weight: 600; transition: 0.3s; text-decoration: none; }
+    nav ul li a:hover { color: #f1c40f; }
+
+    /* Hero */
+    .hero { height: 85vh; background: url("https://i.ibb.co/smL1Zzv/shopping-banner.jpg") no-repeat center center/cover; position: relative; display: flex; align-items: center; justify-content: center; }
+    .hero::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); }
+    .hero-content { position: relative; text-align: center; color: #fff; max-width: 700px; padding: 20px; z-index: 1; }
+    .hero-content h2 { font-size: 3rem; margin-bottom: 15px; font-weight: 700; }
+    .hero-content p { font-size: 1.2rem; margin-bottom: 25px; }
+    .btn { display: inline-block; background: #f1c40f; color: #111; padding: 12px 30px; border-radius: 30px; font-weight: 600; transition: 0.3s; text-decoration: none; }
+    .btn:hover { background: #d4ac0d; color: #fff; }
+
+    /* Sections */
+    .cards { width: 90%; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+    .card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #111; }
+    .card p { font-size: 1rem; margin-bottom: 20px; color: #444; }
+    .btn.small { padding: 8px 18px; font-size: 0.9rem; }
+
+    /* Footer */
+    footer { background: #111; color: #bbb; text-align: center; padding: 20px; margin-top: 50px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="nav-container">
+      <h1 class="logo">Bramwell <span>Shopping</span></h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Join</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to Bramwell Shopping</h2>
+      <p>Luxury Roblox shopping experiences like never before.</p>
+      <a href="#" class="btn">Discover More</a>
+    </div>
+  </section>
+
+  <!-- Info Cards -->
+  <main class="cards">
+    <div class="card">
+      <h3>About Us</h3>
+      <p>Discover our premium Roblox shopping mall and vision for the future of virtual commerce.</p>
+      <a href="#" class="btn small">Read More</a>
+    </div>
+    <div class="card">
+      <h3>Join Us</h3>
+      <p>Become part of our Roblox and Discord community for exclusive stores, updates, and events.</p>
+      <a href="#" class="btn small">Join Today</a>
+    </div>
+    <div class="card">
+      <h3>Contact</h3>
+      <p>Want to collaborate or need support? Reach out to us anytime via Roblox or Discord.</p>
+      <a href="#" class="btn small">Get in Touch</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bramwell Shopping. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
