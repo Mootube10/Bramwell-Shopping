@@ -1,0 +1,33 @@
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
+
+/* Navbar */
+header { background: #111; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+.nav-container { width: 90%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { color: #fff; font-size: 1.6rem; font-weight: 700; }
+.logo span { color: #f1c40f; }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 25px; }
+nav ul li a { color: #fff; font-weight: 600; transition: 0.3s; text-decoration: none; }
+nav ul li a:hover, nav ul li a.active { color: #f1c40f; }
+
+/* Hero */
+.hero { height: 85vh; background: url("https://i.ibb.co/smL1Zzv/shopping-banner.jpg") no-repeat center center/cover; position: relative; display: flex; align-items: center; justify-content: center; }
+.hero::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); }
+.hero-content { position: relative; text-align: center; color: #fff; max-width: 700px; padding: 20px; z-index: 1; }
+.hero-content h2 { font-size: 3rem; margin-bottom: 15px; font-weight: 700; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 25px; }
+.btn { display: inline-block; background: #f1c40f; color: #111; padding: 12px 30px; border-radius: 30px; font-weight: 600; transition: 0.3s; text-decoration: none; }
+.btn:hover { background: #d4ac0d; color: #fff; }
+.btn.small { padding: 8px 18px; font-size: 0.9rem; }
+
+/* Card Section */
+.cards { width: 90%; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+.card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #111; }
+.card p { font-size: 1rem; margin-bottom: 20px; color: #444; }
+
+/* Footer */
+footer { background: #111; color: #bbb; text-align: center; padding: 20px; margin-top: 50px; font-size: 0.9rem; }
