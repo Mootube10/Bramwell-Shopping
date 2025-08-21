@@ -6,8 +6,9 @@
   <title>Bramwell Shopping</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; scroll-behavior: smooth; }
 
     /* Navbar */
     header { background: #111; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
@@ -16,19 +17,19 @@
     .logo span { color: #f1c40f; }
     nav ul { display: flex; list-style: none; }
     nav ul li { margin-left: 25px; }
-    nav ul li a { color: #fff; font-weight: 600; transition: 0.3s; text-decoration: none; cursor: pointer; }
+    nav ul li a { color: #fff; font-weight: 600; transition: 0.3s; text-decoration: none; }
     nav ul li a:hover { color: #f1c40f; }
 
     /* Hero */
-    .hero { height: 85vh; background: url("file:///C:/Users/iimas/Desktop/f28a40622507328fb3cc9db88479e3d5.png") no-repeat center center/cover; position: relative; display: flex; align-items: center; justify-content: center; }
+    .hero { height: 85vh; background: url("https://i.ibb.co/smL1Zzv/shopping-banner.jpg") no-repeat center center/cover; position: relative; display: flex; align-items: center; justify-content: center; }
     .hero::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); }
     .hero-content { position: relative; text-align: center; color: #fff; max-width: 700px; padding: 20px; z-index: 1; }
     .hero-content h2 { font-size: 3rem; margin-bottom: 15px; font-weight: 700; }
     .hero-content p { font-size: 1.2rem; margin-bottom: 25px; }
-    .btn { display: inline-block; background: #f1c40f; color: #111; padding: 12px 30px; border-radius: 30px; font-weight: 600; transition: 0.3s; text-decoration: none; cursor: pointer; }
+    .btn { display: inline-block; background: #f1c40f; color: #111; padding: 12px 30px; border-radius: 30px; font-weight: 600; transition: 0.3s; text-decoration: none; }
     .btn:hover { background: #d4ac0d; color: #fff; }
 
-    /* Cards on Home */
+    /* Cards */
     .cards { width: 90%; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
     .card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
     .card:hover { transform: translateY(-8px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
@@ -36,9 +37,14 @@
     .card p { font-size: 1rem; margin-bottom: 20px; color: #444; }
     .btn.small { padding: 8px 18px; font-size: 0.9rem; }
 
-    /* Pages */
-    .page { display: none; padding: 50px 20px; max-width: 900px; margin: auto; }
-    .page.active { display: block; }
+    /* Staff Section */
+    .staff { padding: 60px 0; background: #f4f4f4; }
+    .staff h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; color: #111; }
+    .staff-container { width: 90%; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .staff-card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; }
+    .staff-card img { width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; }
+    .staff-card h3 { margin-bottom: 10px; font-size: 1.2rem; color: #111; }
+    .staff-card p { font-size: 0.95rem; color: #555; }
 
     /* Footer */
     footer { background: #111; color: #bbb; text-align: center; padding: 20px; margin-top: 50px; font-size: 0.9rem; }
@@ -51,45 +57,70 @@
       <h1 class="logo">Bramwell <span>Shopping</span></h1>
       <nav>
         <ul>
-          <li><a onclick="showPage('home')">Home</a></li>
-          <li><a onclick="showPage('about')">About</a></li>
-          <li><a onclick="showPage('join')">Join</a></li>
-          <li><a onclick="showPage('contact')">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#join">Join</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#staff">Our Staff</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Home -->
-  <section id="home" class="page active">
-    <div class="hero">
-      <div class="hero-content">
-        <h2>Welcome to Bramwell Shopping</h2>
-        <p>Luxury Roblox shopping experiences like never before.</p>
-        <a class="btn" onclick="showPage('about')">Discover More</a>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Welcome to Bramwell Shopping</h2>
+      <p>Luxury Roblox shopping experiences like never before.</p>
+      <a href="#about" class="btn">Discover More</a>
+    </div>
+  </section>
+
+  <!-- Info Cards -->
+  <main class="cards">
+    <div class="card" id="about">
+      <h3>About Us</h3>
+      <p>Discover our premium Roblox shopping mall and vision for the future of virtual commerce.</p>
+      <a href="#about" class="btn small">Read More</a>
+    </div>
+    <div class="card" id="join">
+      <h3>Join Us</h3>
+      <p>Become part of our Roblox and Discord community for exclusive stores, updates, and events.</p>
+      <a href="#join" class="btn small">Join Today</a>
+    </div>
+    <div class="card" id="contact">
+      <h3>Contact</h3>
+      <p>Want to collaborate or need support? Reach out to us anytime via Roblox or Discord.</p>
+      <a href="#contact" class="btn small">Get in Touch</a>
+    </div>
+  </main>
+
+  <!-- Our Staff -->
+  <section class="staff" id="staff">
+    <h2>Meet Our Staff</h2>
+    <div class="staff-container">
+      <div class="staff-card">
+        <img src="https://i.ibb.co/0Qj2YpG/avatar1.png" alt="Staff 1">
+        <h3>Alex Johnson</h3>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="staff-card">
+        <img src="https://i.ibb.co/wpdP6S8/avatar2.png" alt="Staff 2">
+        <h3>Samantha Lee</h3>
+        <p>Community Manager</p>
+      </div>
+      <div class="staff-card">
+        <img src="https://i.ibb.co/c10nC6C/avatar3.png" alt="Staff 3">
+        <h3>Michael Chen</h3>
+        <p>Lead Developer</p>
+      </div>
+      <div class="staff-card">
+        <img src="https://i.ibb.co/3fR7RhX/avatar4.png" alt="Staff 4">
+        <h3>Emily Davis</h3>
+        <p>Event Coordinator</p>
       </div>
     </div>
-
-    <!-- Info Cards -->
-    <main class="cards">
-      <div class="card">
-        <h3>About Us</h3>
-        <p>Discover our premium Roblox shopping mall and vision for the future of virtual commerce.</p>
-        <a class="btn small" onclick="showPage('about')">Read More</a>
-      </div>
-      <div class="card">
-        <h3>Join Us</h3>
-        <p>Become part of our Roblox and Discord community for exclusive stores, updates, and events.</p>
-        <a class="btn small" onclick="showPage('join')">Join Today</a>
-</a>
-      </div>
-      <div class="card">
-        <h3>Contact</h3>
-        <p>>Want to collaborate or need support? Reach out to us anytime via Roblox or Discord.</p>
-        <a class="btn small" onclick="showPage('contact')">Get in Touch</a>
-                <a class="btn small" onclick="showPage('join')">Join Today</a>
-      </div>
-    </main>
+  </section>
   </section>
 
   <!-- About -->
