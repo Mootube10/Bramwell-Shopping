@@ -6,9 +6,8 @@
   <title>Bramwell Shopping</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
 
     /* Navbar */
     header { background: #111; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
@@ -17,37 +16,35 @@
     .logo span { color: #f1c40f; }
     nav ul { display: flex; list-style: none; }
     nav ul li { margin-left: 25px; }
-    nav ul li a { color: #fff; font-weight: 600; transition: 0.3s; text-decoration: none; }
+    nav ul li a { color: #fff; font-weight: 600; text-decoration: none; transition: 0.3s; cursor: pointer; }
     nav ul li a:hover { color: #f1c40f; }
 
-    /* Hero */
+    /* General Page Sections */
+    section { display: none; padding: 60px 10%; min-height: 70vh; }
+    section.active { display: block; }
+
+    /* Hero (Home only) */
     .hero { height: 85vh; background: url("https://i.ibb.co/smL1Zzv/shopping-banner.jpg") no-repeat center center/cover; position: relative; display: flex; align-items: center; justify-content: center; }
     .hero::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); }
     .hero-content { position: relative; text-align: center; color: #fff; max-width: 700px; padding: 20px; z-index: 1; }
-    .hero-content h2 { font-size: 3rem; margin-bottom: 15px; font-weight: 700; }
-    .hero-content p { font-size: 1.2rem; margin-bottom: 25px; }
-    .btn { display: inline-block; background: #f1c40f; color: #111; padding: 12px 30px; border-radius: 30px; font-weight: 600; transition: 0.3s; text-decoration: none; }
+    .hero-content h2 { font-size: 3rem; margin-bottom: 15px; }
+    .btn { display: inline-block; background: #f1c40f; color: #111; padding: 12px 30px; border-radius: 30px; font-weight: 600; transition: 0.3s; text-decoration: none; margin-top: 20px; }
     .btn:hover { background: #d4ac0d; color: #fff; }
 
-    /* Cards */
+    /* Cards (Home only) */
     .cards { width: 90%; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
     .card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
-    .card:hover { transform: translateY(-8px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
-    .card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #111; }
-    .card p { font-size: 1rem; margin-bottom: 20px; color: #444; }
+    .card:hover { transform: translateY(-8px); }
+    .card h3 { font-size: 1.4rem; margin-bottom: 15px; }
     .btn.small { padding: 8px 18px; font-size: 0.9rem; }
 
-    /* Staff Section */
-    .staff { padding: 60px 0; background: #f4f4f4; }
-    .staff h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; color: #111; }
+    /* Staff */
     .staff-container { width: 90%; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
     .staff-card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; }
     .staff-card img { width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; }
-    .staff-card h3 { margin-bottom: 10px; font-size: 1.2rem; color: #111; }
-    .staff-card p { font-size: 0.95rem; color: #555; }
 
     /* Footer */
-    footer { background: #111; color: #bbb; text-align: center; padding: 20px; margin-top: 50px; font-size: 0.9rem; }
+    footer { background: #111; color: #bbb; text-align: center; padding: 20px; margin-top: 50px; }
   </style>
 </head>
 <body>
@@ -57,46 +54,73 @@
       <h1 class="logo">Bramwell <span>Shopping</span></h1>
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#join">Join</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#staff">Our Staff</a></li>
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About</a></li>
+          <li><a onclick="showPage('join')">Join</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+          <li><a onclick="showPage('staff')">Our Staff</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h2>Welcome to Bramwell Shopping</h2>
-      <p>Luxury Roblox shopping experiences like never before.</p>
-      <a href="#about" class="btn">Discover More</a>
+  <!-- Home -->
+  <section id="home" class="active">
+    <div class="hero">
+      <div class="hero-content">
+        <h2>Welcome to Bramwell Shopping</h2>
+        <p>Luxury Roblox shopping experiences like never before.</p>
+        <a onclick="showPage('about')" class="btn">Discover More</a>
+      </div>
     </div>
+    <main class="cards">
+      <div class="card">
+        <h3>About Us</h3>
+        <p>Discover our premium Roblox shopping mall and vision.</p>
+        <a onclick="showPage('about')" class="btn small">Read More</a>
+      </div>
+      <div class="card">
+        <h3>Join Us</h3>
+        <p>Become part of our Roblox and Discord community.</p>
+        <a onclick="showPage('join')" class="btn small">Join Today</a>
+      </div>
+      <div class="card">
+        <h3>Contact</h3>
+        <p>Want to collaborate or need support? Reach out to us anytime.</p>
+        <a onclick="showPage('contact')" class="btn small">Get in Touch</a>
+      </div>
+      <div class="card">
+        <h3>Our Staff</h3>
+        <p>Meet the amazing people making Bramwell Shopping possible.</p>
+        <a onclick="showPage('staff')" class="btn small">Meet the Team</a>
+      </div>
+    </main>
   </section>
 
-  <!-- Info Cards -->
-  <main class="cards">
-    <div class="card" id="about">
-      <h3>About Us</h3>
-      <p>Discover our premium Roblox shopping mall and vision for the future of virtual commerce.</p>
-      <a href="#about" class="btn small">Read More</a>
-    </div>
-    <div class="card" id="join">
-      <h3>Join Us</h3>
-      <p>Become part of our Roblox and Discord community for exclusive stores, updates, and events.</p>
-      <a href="#join" class="btn small">Join Today</a>
-    </div>
-    <div class="card" id="contact">
-      <h3>Contact</h3>
-      <p>Want to collaborate or need support? Reach out to us anytime via Roblox or Discord.</p>
-      <a href="#contact" class="btn small">Get in Touch</a>
-    </div>
-  </main>
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Bramwell Shopping, your go-to destination for style, convenience, and quality...</p>
+    <a class="btn" onclick="showPage('home')">Back Home</a>
+  </section>
 
-  <!-- Our Staff -->
-  <section class="staff" id="staff">
+  <!-- Join -->
+  <section id="join">
+    <h2>Join Us</h2>
+    <p>Be the first to know about new stores, events, and updates...</p>
+    <a href="https://discord.gg/pKmKepy54g" class="btn">Join Discord</a>
+    <a class="btn" onclick="showPage('home')">Back Home</a>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or need support? Reach us via Discord or email.</p>
+    <a class="btn" onclick="showPage('home')">Back Home</a>
+  </section>
+
+  <!-- Staff -->
+  <section id="staff">
     <h2>Meet Our Staff</h2>
     <div class="staff-container">
       <div class="staff-card">
@@ -120,87 +144,6 @@
         <p>Event Coordinator</p>
       </div>
     </div>
-  </section>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="page">
-    <h2>About Us</h2>
-    <p>Welcome to Bramwell Shopping, your go-to destination for style, convenience, and quality. We believe shopping should be more than just buying products — it should be an experience that inspires and connects people.
-
-At Bramwell Shopping, we bring together a carefully selected range of products, from everyday essentials to the latest trends, all in one easy-to-navigate place. Whether you’re here to discover something new, find the perfect gift, or treat yourself, our mission is to make shopping simple, enjoyable, and rewarding.
-
-What makes us different is our commitment to:
-
-Quality & Value – Only products we’d proudly use ourselves.
-
-Community & Connection – Supporting both customers and local sellers.
-
-Innovation – A modern, seamless shopping experience built for everyone.
-
-Bramwell Shopping isn’t just a store — it’s a community where style, practicality, and affordability meet. We’re here to help you shop smarter, live better, and enjoy every moment in between.</p>
-    <a class="btn" onclick="showPage('home')">Back Home</a>
-  </section>
-
-  <!-- Join -->
-  <section id="join" class="page">
-    <h2>Join Us</h2>
-    <p>At Bramwell Shopping, we’re more than just a place to shop — we’re a community. By joining us, you’ll be part of something bigger: a growing hub for shoppers, creators, and friends.
-
-Why Join?
-
-Be the first to know about new stores, events, and updates.
-
-Connect with others who share your interests.
-
-Take part in fun community activities and giveaways.
-
-Help shape the future of Bramwell Shopping with your feedback.
-
-How You Can Join
-
-Roblox Group – Be part of our official Roblox community.
-
-Discord Server – Chat, hang out, and stay updated with announcements.
-
-Team Opportunities – Want to help us grow? Apply for a role and become part of the team.
-
-Be Part of the Journey
-
-Bramwell Shopping is only just beginning, and we’d love for you to be part of our story.
-Click below to join us today and experience the future of shopping in Roblox!</p>
-    <a class="btn small" onclick="showPage('join')">Join Today</a>
-        <a href="https://discord.gg/pKmKepy54g" 
-   style="display:inline-block; padding:12px 24px; 
-          background-color:#5865F2; color:white; 
-          font-family:Arial, sans-serif; font-weight:bold; 
-          border-radius:8px; text-decoration:none;">
-    <a class="btn" onclick="showPage('home')">Back Home</a>
-
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="page">
-    <h2>Contact Us</h2>
-    <p>Have questions, feedback, or need support?
-We’d love to hear from you!
-
-📩 Ways to reach us:
-
-Discord Support – The fastest way to get help. Join our Discord server
- and open a ticket.
-
-Roblox Group Wall – Leave a message on our official Roblox group wall.
-
-Email – For business inquiries, reach us at: tickets@bramwell-shopping.p.tawk.email
-      
-💡 Our team usually responds within 24–48 hours.</p>
-            <a class="btn small" onclick="showPage('contact')">Join Today</a>
-        <a href="https://discord.gg/pKmKepy54g" 
-   style="display:inline-block; padding:12px 24px; 
-          background-color:#5865F2; color:white; 
-          font-family:Arial, sans-serif; font-weight:bold; 
-          border-radius:8px; text-decoration:none;">
     <a class="btn" onclick="showPage('home')">Back Home</a>
   </section>
 
@@ -208,16 +151,7 @@ Email – For business inquiries, reach us at: tickets@bramwell-shopping.p.tawk.
   <footer>
     <p>&copy; 2025 Bramwell Shopping. All Rights Reserved.</p>
   </footer>
-
-  <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-      window.scrollTo(0, 0); // always go to top
-    }
-  </script>
-
-  <!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -230,6 +164,13 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(pageId).classList.add("active");
+      window.scrollTo(0,0);
+    }
+  </script>
 </body>
 </html>
 
